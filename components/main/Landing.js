@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const Main = () => {
   return (
@@ -11,9 +12,9 @@ const Main = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <div className="btn-section">
-            <button type="button" className="btn btn-primary">
-              &nbsp;Get Started&nbsp;
-            </button>
+            <Link href="/main">
+              <a className="btn btn-primary">Get Started</a>
+            </Link>
           </div>
         </div>
         <div className="col-lg-6">
@@ -27,7 +28,15 @@ const Main = () => {
       </div>
       <style jsx>{`
         .heading {
-          font-size: 72px;
+          font-size: 65px;
+        }
+        .btn-section {
+          .btn-primary {
+            background-color: #656af6;
+            color: #fff;
+            padding: 10px 25px;
+            border: 0px;
+          }
         }
       `}</style>
     </div>

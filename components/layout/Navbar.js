@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import ActiveLink from "./ActiveLink"
 import { EntypoHome } from "react-entypo"
 const Navbar = () => {
