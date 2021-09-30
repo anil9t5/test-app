@@ -22,10 +22,13 @@ const LoginForm = ({ login, error }) => {
           <hr className="separator" />
         </div>
         <div className="col-lg-5">
-          <h2 className="text-center mt-4">Please login</h2>
+          <h2 className="mt-4">Please login</h2>
           <div className="form-section">
             <form onSubmit={submitHandler}>
               <div className="form-group">
+                <label htmlFor="name">
+                  <i className="bi bi-person-fill" />
+                </label>
                 <input
                   type="text"
                   className="form-control mb-3"
@@ -38,6 +41,9 @@ const LoginForm = ({ login, error }) => {
                 />
               </div>
               <div className="form-group">
+                <label htmlFor="email">
+                  <i className="bi bi-envelope-fill" />
+                </label>
                 <input
                   type="text"
                   className="form-control mb-3"
@@ -50,6 +56,9 @@ const LoginForm = ({ login, error }) => {
                 />
               </div>
               <div className="form-group">
+                <label htmlFor="password">
+                  <i className="bi bi-key-fill" />
+                </label>
                 <input
                   type="password"
                   className="form-control mb-3"
@@ -69,6 +78,14 @@ const LoginForm = ({ login, error }) => {
       </div>
 
       <style jsx>{`
+        .form-group {
+          position: relative;
+          label {
+            position: absolute;
+            left: 16px;
+            top: 30%;
+          }
+        }
         .form-section {
           margin-top: 60px;
           margin-right: 30px;
@@ -78,6 +95,8 @@ const LoginForm = ({ login, error }) => {
           margin-bottom: 60px;
           .form-control {
             border: 1px solid #d0d1ff;
+            height: 50px;
+            padding-left: 45px;
           }
         }
         .btn-primary {
