@@ -6,6 +6,7 @@ import * as sessionStore from "../../generics/sessionStore"
 
 const Login = () => {
   const router = useRouter()
+  const [loading, setLoading] = useState(true)
   const [user, setUser] = useState({ name: "", email: "" })
   const [error, setError] = useState("")
   const credentials = {
@@ -14,10 +15,12 @@ const Login = () => {
   }
   const auth = new AuthService()
   const isLoggedIn = auth.loggedIn()
-  console.log(isLoggedIn)
+
+  useEffect(() => {
+    setLoading(false)
+  }, [])
 
   const login = (details) => {
-    console.log(details)
     if (
       details.email == credentials.email &&
       details.password == credentials.password
@@ -27,18 +30,33 @@ const Login = () => {
         email: details.email,
       })
       sessionStore.setProfile(details)
+      router.push("/main")
     } else {
       console.log("Credentials do not match!")
     }
   }
+  console.log("Loading", loading)
 
-  const logout = () => {
-    setUser({ name: "", email: "" })
-  }
   return (
-    <div>
-      <LoginForm login={login} />
-    </div>
+    <>
+      {loading ? (
+        <div className="spinner-wrapper">
+          <div className="spinner-border" role="status">
+            <span className="sr-only"></span>
+          </div>
+        </div>
+      ) : (
+        <LoginForm login={login} />
+      )}
+      <style jsx>{`
+        .spinner-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+      `}</style>
+    </>
   )
 }
 

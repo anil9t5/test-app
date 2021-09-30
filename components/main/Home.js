@@ -1,12 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const Main = () => {
+const Home = () => {
   return (
     <div className="container">
       <div className="row">
         <div className="col-lg-6 d-flex flex-column justify-content-center">
-          <h2 className="heading">Awesome Landing Page</h2>
+          <h2 className="heading">Welcome to the Test App</h2>
           <p className="sub-heading">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -42,4 +42,4 @@ const Main = () => {
     </div>
   )
 }
-export default Main
+export default Home
