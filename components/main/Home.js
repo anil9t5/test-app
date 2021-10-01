@@ -19,8 +19,10 @@ const Home = () => {
       {!isLoggedIn && (
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 d-flex flex-column justify-content-center">
-              <h2 className="heading">Welcome to the Test App</h2>
+            <div className="col-lg-6 d-flex flex-column justify-content-center pull-down-20">
+              <h2 className="heading heading-on-mobile">
+                Welcome to the Test App
+              </h2>
               <p className="sub-heading">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.

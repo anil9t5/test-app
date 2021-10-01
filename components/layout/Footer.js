@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <div className="footer-text">
+              <div className="footer-text footer-text-on-mobile">
                 <span>
                   Made with <EntypoHeart className="icon-heart" /> in
                   Fredericton, Canada.
@@ -28,7 +28,7 @@ const Footer = () => {
             position: fixed;
             bottom: 0px;
             text-align: center;
-            padding: 15px;
+            padding: 10px;
           }
           :global(.icon-heart) {
             font-size: 20px;

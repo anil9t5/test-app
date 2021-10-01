@@ -1,0 +1,78 @@
+/* iPhones media query 2436x1125px at 458ppi */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .pull-down-20 {
+    margin-top: 20%;
+  }
+  .heading-on-mobile {
+    font-size: 22px !important;
+  }
+  .footer-text-on-mobile {
+    font-size: 15px;
+  }
+  .separator-on-mobile {
+    display: none;
+  }
+  .infographics {
+    display: none;
+  }
+  .form-section-on-mobile {
+    padding: 30px 25px !important;
+    margin: 30px 10px !important;
+  }
+  .form-section-on-mobile .form-group .form-control,
+  .error {
+    height: 45px !important;
+  }
+  .timer-on-mobile {
+    text-align: center !important;
+  }
+  .timer-text-on-mobile {
+    font-size: 26px !important;
+    margin-top: -25px;
+  }
+  .flex-row-on-mobile {
+    display: flex;
+    position: relative !important;
+    flex-direction: row;
+  }
+}
+
+/* Smartphones in portrait mode (0-479px) */
+@media only screen and (max-width: 479px) {
+  /* your css goes here */
+  .pull-down-20 {
+    margin-top: 15%;
+  }
+  .heading-on-mobile {
+    font-size: 22px !important;
+  }
+  .footer-text-on-mobile {
+    font-size: 15px;
+  }
+  .separator-on-mobile {
+    display: none;
+  }
+  .infographics {
+    display: none;
+  }
+  .form-section-on-mobile {
+    padding: 30px 25px !important;
+    margin: 30px 10px !important;
+  }
+  .form-section-on-mobile .form-group .form-control,
+  .error {
+    height: 45px !important;
+  }
+  .timer-on-mobile {
+    text-align: center !important;
+  }
+  .timer-text-on-mobile {
+    font-size: 26px !important;
+    margin-top: -35px;
+  }
+  .flex-row-on-mobile {
+    display: flex;
+    position: relative !important;
+    flex-direction: row;
+  }
+}

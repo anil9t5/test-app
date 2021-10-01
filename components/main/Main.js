@@ -33,7 +33,7 @@ const Main = () => {
   return (
     <>
       {isLoggedIn && (
-        <div className="d-flex flex-column align-items-center">
+        <div className="d-flex flex-column align-items-center timer-on-mobile">
           <Image
             src="/images/41.svg"
             alt="Landing page image"
@@ -43,8 +43,8 @@ const Main = () => {
           <h2
             className={
               timeOn
-                ? "animate__animated animate__pulse animate__infinite	infinite"
-                : ""
+                ? "animate__animated animate__pulse animate__infinite timer-text-on-mobile infinite"
+                : "timer-text-on-mobile"
             }>
             <Moment interval={timeOn ? 1 : 0} unit="seconds">
               {dateToFormat}

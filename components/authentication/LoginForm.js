@@ -1,24 +1,26 @@
 import Image from "next/image"
 import FormValidation from "./FormValidation"
-const LoginForm = ({ login }) => {
+const LoginForm = ({ login, error }) => {
   return (
     <>
       <div className="row">
         <div className="col-lg-6">
-          <Image
-            src="/images/157.svg"
-            alt="Landing page image"
-            width={500}
-            height={500}
-          />
+          <div className="infographics">
+            <Image
+              src="/images/157.svg"
+              alt="Landing page image"
+              width={500}
+              height={500}
+            />
+          </div>
         </div>
         <div className="col-lg-1">
-          <hr className="separator" />
+          <hr className="separator separator-on-mobile" />
         </div>
         <div className="col-lg-5">
           <h2 className="mt-4">Please login</h2>
           <div className="form-section">
-            <FormValidation login={login} />
+            <FormValidation login={login} error={error} />
           </div>
         </div>
       </div>

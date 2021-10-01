@@ -2,7 +2,7 @@ import { Formik } from "formik"
 import * as yup from "yup"
 import React from "react"
 
-const FormValidation = ({ login }) => {
+const FormValidation = ({ login, error }) => {
   return (
     <>
       <Formik
@@ -38,7 +38,8 @@ const FormValidation = ({ login }) => {
           } = props
           return (
             <div>
-              <div className="form-section">
+              <div className="form-section form-section-on-mobile">
+                {error ? <span className="input-feedback">{error}</span> : ""}
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
                     <label htmlFor="firstname">

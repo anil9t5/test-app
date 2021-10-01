@@ -8,6 +8,7 @@ import * as sessionStore from "../../generics/sessionStore"
 const Login = () => {
   const router = useRouter()
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
 
   const credentials = {
     email: "user@user.com",
@@ -25,11 +26,13 @@ const Login = () => {
 
   const login = (details) => {
     if (
-      details.email == credentials.email &&
-      details.password == credentials.password
+      details.email.toLowerCase() == credentials.email &&
+      details.password.toLowerCase() == credentials.password
     ) {
       sessionStore.setProfile(details)
       router.push("/main")
+    } else {
+      setError("Credentials do not match!")
     }
   }
 
@@ -42,7 +45,7 @@ const Login = () => {
           </div>
         </div>
       ) : (
-        !isLoggedIn && <LoginForm login={login} />
+        !isLoggedIn && <LoginForm login={login} error={error} />
       )}
       <style jsx>{`
         .spinner-wrapper {
