@@ -32,7 +32,7 @@ const Footer = () => {
           }
           :global(.icon-heart) {
             font-size: 20px;
-            color: #f782ac;
+            color: #ff6b6b;
           }
         }
       `}</style>

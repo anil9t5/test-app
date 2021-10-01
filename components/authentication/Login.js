@@ -7,8 +7,7 @@ import * as sessionStore from "../../generics/sessionStore"
 const Login = () => {
   const router = useRouter()
   const [loading, setLoading] = useState(true)
-  const [user, setUser] = useState({ name: "", email: "" })
-  const [error, setError] = useState("")
+
   const credentials = {
     email: "user@user.com",
     password: "user123",
@@ -25,17 +24,10 @@ const Login = () => {
       details.email == credentials.email &&
       details.password == credentials.password
     ) {
-      setUser({
-        name: details.name,
-        email: details.email,
-      })
       sessionStore.setProfile(details)
       router.push("/main")
-    } else {
-      console.log("Credentials do not match!")
     }
   }
-  console.log("Loading", loading)
 
   return (
     <>
