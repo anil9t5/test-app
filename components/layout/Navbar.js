@@ -35,8 +35,8 @@ const Navbar = () => {
               </a>
             </Link>
           )}
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-md-auto">
+          <div>
+            <ul className="navbar-nav ms-md-auto flex-row-on-mobile">
               <li className="nav-item d-flex align-items-center">
                 <strong>
                   {isLoggedIn && <span>Welcome {userProfile.firstname}!</span>}
