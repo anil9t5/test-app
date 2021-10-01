@@ -21,7 +21,7 @@ const ActiveLink = ({ router, href, children }) => {
           border-radius: 10px !important;
           color: #656af6;
           background-color: #ffffff;
-          border: 1px solid #dde5ff;
+          border: 1px solid #e2e7fa;
         }
         .nav-link {
           color: #656af6 !important;

@@ -1,4 +1,5 @@
 import Script from "next/script"
+import { EntypoHeart } from "react-entypo"
 
 const Footer = () => {
   return (
@@ -8,7 +9,10 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-12">
               <div className="footer-text">
-                <span>Made with in Fredericton, Canada.</span>
+                <span>
+                  Made with <EntypoHeart className="icon-heart" /> in
+                  Fredericton, Canada.
+                </span>
               </div>
             </div>
           </div>
@@ -21,13 +25,14 @@ const Footer = () => {
           width: 100%;
           z-index: 1000;
           .footer-text {
-            position: relative;
+            position: fixed;
+            bottom: 0px;
             text-align: center;
             padding: 15px;
           }
           :global(.icon-heart) {
-            font-size: 18px;
-            color: #f782ac;
+            font-size: 20px;
+            color: #ff6b6b;
           }
         }
       `}</style>
