@@ -46,7 +46,10 @@ const Main = () => {
                 ? "animate__animated animate__pulse animate__infinite timer-text-on-mobile infinite"
                 : "timer-text-on-mobile"
             }>
-            <Moment interval={timeOn ? 1 : 0} unit="seconds">
+            <Moment
+              interval={timeOn ? 1 : 0}
+              format="MM/DD/YYYY, hh:mm:ss a"
+              unit="seconds">
               {dateToFormat}
             </Moment>
           </h2>
