@@ -8,6 +8,12 @@ const Home = () => {
   const auth = new AuthService()
   const isLoggedIn = auth.loggedIn()
 
+  useEffect(() => {
+    if (isLoggedIn) {
+      Router.push("/main")
+    }
+  }, [])
+
   return (
     <>
       {!isLoggedIn && (

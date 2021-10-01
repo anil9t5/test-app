@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import { useState, useEffect } from "react"
+import Router from "next/router"
 import AuthService from "../../generics/authService"
 import LoginForm from "./LoginForm"
 import * as sessionStore from "../../generics/sessionStore"
@@ -17,6 +18,9 @@ const Login = () => {
 
   useEffect(() => {
     setLoading(false)
+    if (isLoggedIn) {
+      Router.push("/main")
+    }
   }, [])
 
   const login = (details) => {
@@ -38,7 +42,7 @@ const Login = () => {
           </div>
         </div>
       ) : (
-        <LoginForm login={login} />
+        !isLoggedIn && <LoginForm login={login} />
       )}
       <style jsx>{`
         .spinner-wrapper {

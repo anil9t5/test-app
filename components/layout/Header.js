@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-sync-scripts */
-/* eslint-disable @next/next/no-page-custom-font */
 /* eslint-disable @next/next/no-css-tags */
 import Head from "next/head"
 
@@ -19,9 +18,6 @@ const Header = () => {
         type="text/css"
         media="screen"
       />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"></link>
 
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

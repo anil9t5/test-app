@@ -1,16 +1,18 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import ActiveLink from "./ActiveLink"
 import Link from "next/link"
-import { useRouter } from "next/router"
 import Router from "next/router"
+import { useRouter } from "next/router"
 import { EntypoHome } from "react-entypo"
 import AuthService from "../../generics/authService"
+import * as sessionStore from "../../generics/sessionStore"
 import "bootstrap-icons/font/bootstrap-icons.css"
 
 const Navbar = () => {
   const auth = new AuthService()
   const isLoggedIn = auth.loggedIn()
   const router = useRouter()
+  const userProfile = sessionStore.getProfile()
 
   const onLogOut = () => {
     auth.logOut()
@@ -23,18 +25,23 @@ const Navbar = () => {
           {isLoggedIn ? (
             <Link href="/main">
               <a>
-                <h4 className="logo">Test App</h4>
+                <h4 className="logo">TestApp</h4>
               </a>
             </Link>
           ) : (
             <Link href="/">
               <a>
-                <h4 className="logo">Test App</h4>
+                <h4 className="logo">TestApp</h4>
               </a>
             </Link>
           )}
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-md-auto">
+              <li className="nav-item d-flex align-items-center">
+                <strong>
+                  {isLoggedIn && <span>Welcome {userProfile.firstname}!</span>}
+                </strong>
+              </li>
               <li className="nav-item">
                 {isLoggedIn ? (
                   <span
@@ -67,6 +74,11 @@ const Navbar = () => {
           .bi-box-arrow-right {
             font-size: 22px;
           }
+        }
+        .logo {
+          font-size: 28px;
+          font-family: "Lobster", cursive;
+          margin-bottom: 0;
         }
         .logo:hover {
           color: #656af6;

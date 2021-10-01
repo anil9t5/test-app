@@ -6,14 +6,18 @@ const FormValidation = ({ login }) => {
   return (
     <>
       <Formik
-        initialValues={{ name: "", email: "", password: "" }}
+        initialValues={{ firstname: "", lastname: "", email: "", password: "" }}
         onSubmit={(values, { setSubmitting }) => {
           login(values)
         }}
         validationSchema={yup.object().shape({
-          name: yup
+          firstname: yup
             .string()
-            .max(15, "Must be 15 characters or less")
+            .max(10, "Must be 10 characters or less")
+            .required("Required"),
+          lastname: yup
+            .string()
+            .max(10, "Must be 10 characters or less")
             .required("Required"),
           email: yup.string().email().required("Required"),
           password: yup
@@ -37,25 +41,47 @@ const FormValidation = ({ login }) => {
               <div className="form-section">
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label htmlFor="name">
+                    <label htmlFor="firstname">
                       <i className="bi bi-person-fill" />
                     </label>
                     <input
-                      name="name"
+                      name="firstname"
                       type="text"
                       className={
-                        errors.name && touched.name
+                        errors.firstname && touched.lastname
                           ? "error"
                           : "form-control mb-3"
                       }
-                      aria-describedby="name"
-                      placeholder="Name"
+                      aria-describedby="firstname"
+                      placeholder="First Name"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values["name"]}
+                      value={values["firstname"]}
                     />
-                    {errors.name && touched.name && (
-                      <div className="input-feedback">{errors.name}</div>
+                    {errors.firstname && touched.firstname && (
+                      <div className="input-feedback">{errors.firstname}</div>
+                    )}
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="lastname">
+                      <i className="bi bi-person-fill" />
+                    </label>
+                    <input
+                      name="lastname"
+                      type="text"
+                      className={
+                        errors.lastname && touched.lastname
+                          ? "error"
+                          : "form-control mb-3"
+                      }
+                      aria-describedby="lastname"
+                      placeholder="Last Name"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values["lastname"]}
+                    />
+                    {errors.lastname && touched.lastname && (
+                      <div className="input-feedback">{errors.lastname}</div>
                     )}
                   </div>
                   <div className="form-group">
